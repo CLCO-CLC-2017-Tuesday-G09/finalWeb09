@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="gs-uploading-files/src/main/java"/>
+	<classpathentry kind="src" path="gs-uploading-files/src/test/java"/>
+	<classpathentry kind="lib" path="gs-uploading-files/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="gs-uploading-files/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="gs-uploading-files/target/classes"/>
+</classpath>

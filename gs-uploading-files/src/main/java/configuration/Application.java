@@ -30,13 +30,6 @@ public class Application extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
-	@Bean
-	CommandLineRunner init(StorageService storageService) {
-		return (args) -> {
-		storageService.deleteAll();
-		storageService.init(); 
-		};
-}
 	@Override
     public void onStartup(ServletContext container) {
       XmlWebApplicationContext appContext = new XmlWebApplicationContext();

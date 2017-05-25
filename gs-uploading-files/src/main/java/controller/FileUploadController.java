@@ -88,7 +88,7 @@ public class FileUploadController {
 		model.addAttribute("news", news);
 		List<UserDocument> listdocuments = userDocumentService.findAll();
 		model.addAttribute("listdocuments", listdocuments);
-        return "ckeditor";
+        return "jsp/ckeditor";
     }
    
 /*    @GetMapping("/sub")
@@ -103,7 +103,7 @@ public class FileUploadController {
  		model.addAttribute("news", news);
  		List<UserDocument> listdocuments = userDocumentService.findAll();
 		model.addAttribute("listdocuments", listdocuments);
-        return "menu_home";
+        return "jsp/menu_home";
     }
     
   
@@ -144,7 +144,7 @@ public class FileUploadController {
  		model.addAttribute("news", news);
  		List<UserDocument> listdocuments = userDocumentService.findAll();
 		model.addAttribute("listdocuments", listdocuments);
- 		return "index";
+ 		return "jsp/index";
  	}
     @RequestMapping(value = { "/newscontent" }, method = RequestMethod.GET)
 	public String newsContent(ModelMap model) {
@@ -156,7 +156,7 @@ public class FileUploadController {
 		model.addAttribute("listdocuments", listdocuments);
  		model.addAttribute("news", news);
 		model.addAttribute("edit", false);
-		return "ckeditor";
+		return "jsp/ckeditor";
 	}
     @RequestMapping(value = { "/news-{Id}" }, method = RequestMethod.GET)
 	public String ListNews(@PathVariable String Id, ModelMap model) {
@@ -169,14 +169,14 @@ public class FileUploadController {
 		model.addAttribute("listdocuments", listdocuments);
  		List<UserDocument> documents = userDocumentService.findAllByNewsId(idnews);
 		model.addAttribute("documents", documents);
-		return "NewsIfo";
+		return "jsp/NewsIfo";
 	}
 	@RequestMapping(value = { "/newscontent" }, method = RequestMethod.POST)
 	public String saveNews(NewsConten newspost, BindingResult result,
 			ModelMap model) {
 
 		if (result.hasErrors()) {
-			return "index";
+			return "jsp/index";
 		}
 
 		newsService.saveNews(newspost);
@@ -187,7 +187,7 @@ public class FileUploadController {
  		List<UserDocument> listdocuments = userDocumentService.findAll();
 		model.addAttribute("listdocuments", listdocuments);
 		//return "success";
-		return "index";
+		return "jsp/index";
 	}
 	@RequestMapping(value = { "/edit-news-{Id}" }, method = RequestMethod.GET)
 	public String editNews(@PathVariable String Id, ModelMap model) {
@@ -200,7 +200,7 @@ public class FileUploadController {
 		model.addAttribute("listdocuments", listdocuments);
  		model.addAttribute("news", news);
 		model.addAttribute("edit", true);
-		return "ckeditor";
+		return "jsp/ckeditor";
 	}
 	
 	/**
@@ -212,7 +212,7 @@ public class FileUploadController {
 				ModelMap model, @PathVariable String Id) {
 	
 			if (result.hasErrors()) {
-				return "index";
+				return "jsp/index";
 			}
 	
 			newsService.updateNews(newspost);
@@ -221,7 +221,7 @@ public class FileUploadController {
 	 		List<UserDocument> listdocuments = userDocumentService.findAll();
 			model.addAttribute("listdocuments", listdocuments);
 			model.addAttribute("success", " updated successfully");
-			return "index";
+			return "jsp/index";
 		}
 	@RequestMapping(value = { "/delete-news-{Id}" }, method = RequestMethod.GET)
 	public String deleteNews(@PathVariable Integer Id,ModelMap model) {
@@ -231,7 +231,7 @@ public class FileUploadController {
  		List<UserDocument> listdocuments = userDocumentService.findAll();
 		model.addAttribute("listdocuments", listdocuments);
 		model.addAttribute("success", " delete successfully");
-		return "index";
+		return "jsp/index";
 	}
 
   /*  @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)

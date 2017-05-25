@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="WebsiteIssce2017">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/gs-uploading-files/src/main/java"/>
+        <wb-resource deploy-path="/" source-path="/gs-uploading-files/src/test/java"/>
+        <property name="context-root" value="WebsiteIssce2017"/>
+        <property name="java-output-path" value="/WebsiteIssce2017/gs-uploading-files/target/classes"/>
+    </wb-module>
+</project-modules>
